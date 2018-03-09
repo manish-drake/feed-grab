@@ -38,7 +38,7 @@ void Grabber::start(int argPortNo){
         error("Error binding socket");
     }
     listen(sockFileDescriptor, 5);
-    clilen = sizeof(clilen);
+    clilen = sizeof(clientEndpoint);
     while(1){
         clientSockFileDescriptor = accept(sockFileDescriptor, (struct sockaddr*) &clientEndpoint, &clilen);
         if(clientSockFileDescriptor < 0){
